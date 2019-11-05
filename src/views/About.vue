@@ -24,7 +24,7 @@
           <v-card-text>{{ ship.manufacturer }}</v-card-text>
 
           <v-card-action>
-            <v-btn class="mx-2" fab dark medium color="purple"
+            <v-btn class="mx-2" fab dark medium color="light blue"
                
                 @click="showing = false">
               <v-icon dark>mdi-minus</v-icon>
