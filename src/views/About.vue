@@ -1,6 +1,7 @@
 
 
 <template>
+  <v-app>
   <v-container>
     <v-row>
       <v-col cols="3" v-for="ship in starships" :key="ship.model">
@@ -23,7 +24,7 @@
           <v-card-text>{{ ship.manufacturer }}</v-card-text>
 
           <v-card-action>
-            <v-btn class="mx-2" fab dark large color="purple"
+            <v-btn class="mx-2" fab dark medium color="purple"
                
                 @click="showing = false">
               <v-icon dark>mdi-minus</v-icon>
@@ -33,6 +34,7 @@
       </v-col>
     </v-row>
   </v-container>
+  </v-app>
 </template>
 
 <script>

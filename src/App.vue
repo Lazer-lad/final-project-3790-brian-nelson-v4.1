@@ -1,6 +1,8 @@
 <template>
+<v-app>
 <div id="app">
     <div id="nav">
+      
 <v-toolbar dense>
         <v-app-bar-nav-icon></v-app-bar-nav-icon>
   
@@ -12,7 +14,7 @@
           <v-icon>mdi-magnify</v-icon>
         </v-btn>
       </v-toolbar>
-
+      
 
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
@@ -21,6 +23,7 @@
     <HelloWorld/>
     <router-view/>
   </div>
+  </v-app>
 </template>
 
 <script>
