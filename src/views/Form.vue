@@ -1,7 +1,7 @@
 <template>
   <v-app>
   
-  <v-content>
+ 
   <v-row>
       <v-col>
   <v-card
@@ -58,7 +58,7 @@
   </v-card>
   </v-col>
   </v-row>
-  </v-content>
+  
   </v-app>
 </template>
 
