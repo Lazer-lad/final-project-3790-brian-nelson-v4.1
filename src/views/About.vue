@@ -9,7 +9,7 @@
           <v-img
             class="white--text align-end"
             height="200px"
-            src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
+            :src="myImage"
           >
             <v-card-title>{{ ship.name }}</v-card-title>
           </v-img>
@@ -43,7 +43,8 @@ import { aboutMixin } from "./aboutmixintest";
 export default {
   data() {
     return {
-      showing: false
+      showing: false,
+      myImage: require('C:/Users/ladof/Desktop/finalprojectv1/finalv4/public/falcon.png')
     };
   },
   mixins: [aboutMixin]

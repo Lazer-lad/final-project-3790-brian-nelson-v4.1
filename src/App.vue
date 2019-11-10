@@ -8,14 +8,14 @@
   <v-toolbar-title>Spaceships</v-toolbar-title>
   <v-spacer></v-spacer>
   <v-toolbar-items color="black">
-          <v-btn text ><router-link to="/">Home</router-link></v-btn>
-          <v-btn text><router-link to="/about">About</router-link></v-btn>
-          <v-btn text><router-link to="/form">Form</router-link></v-btn>
+          <v-btn text color="black"><router-link to="/"><div class="nav-bar">Home</div></router-link></v-btn>
+          <v-btn text><router-link to="/about"><div class="nav-bar">About</div></router-link></v-btn>
+          <v-btn text><router-link to="/form"><div class="nav-bar">Form</div></router-link></v-btn>
         </v-toolbar-items>
 
         
   
-        <v-spacer></v-spacer>
+       
   
         <v-btn icon>
           <v-icon>mdi-magnify</v-icon>
@@ -60,6 +60,9 @@ export default {
     color: white;
     
     text-decoration: none;
+}
+.nav-bar{
+  color: white;
 }
 
 </style>
