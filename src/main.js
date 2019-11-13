@@ -9,14 +9,14 @@ import axios from 'axios';
 
 Vue.config.productionTip = false
 
-vuetify.directive('highlight', {
-bind(el, binding, vnode ){
+//vuetify.directive('highlight', {
+//bind(el, binding, vnode ){
 //el stands for element
-el.style.backgroundColor = 'green';
+//el.style.backgroundColor = 'green';
 
-}
+//}
 
-});
+//});
 
 
 new Vue({

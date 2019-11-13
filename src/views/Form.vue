@@ -57,9 +57,12 @@
   
    </v-container>
   </v-card>
+  <v-btn v-customOn="clicked">is this working</v-btn>
   </v-col>
   </v-row>
   
+
+
   </v-app>
 </template>
 
@@ -73,6 +76,19 @@ export default {
       
     };
   },
+// DIRECTIVE STUFF
+  directives: {
+    customOn: {
+      bind (el,binding){
+
+      }
+    }
+  },
+  methods: {
+    clicked() {
+      alert('this is working')
+    }
+  }
   
 };
 </script>
