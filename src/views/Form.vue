@@ -10,6 +10,7 @@
     max-width="400"
     outlined
     >
+    <v-card-title>Form</v-card-title>
     <v-container>
         
     <v-form>

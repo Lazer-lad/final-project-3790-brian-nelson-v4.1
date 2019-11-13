@@ -10,10 +10,10 @@
 
   <v-toolbar-title>Spaceships</v-toolbar-title>
   <v-spacer></v-spacer>
-  <v-toolbar-items color="black">
-          <v-btn text color="black"><router-link to="/"><div class="nav-bar">Home</div></router-link></v-btn>
-          <v-btn text><router-link to="/about"><div class="nav-bar">About</div></router-link></v-btn>
-          <v-btn text><router-link to="/form"><div class="nav-bar">Form</div></router-link></v-btn>
+  <v-toolbar-items  dense color="black">
+          <div><router-link to="/"><v-btn text color="black">Home</v-btn></router-link></div>
+          <router-link to="/about"><v-btn text>About</v-btn></router-link>
+          <router-link to="/form"><v-btn text>Form</v-btn></router-link>
         </v-toolbar-items>
 
         
@@ -104,6 +104,12 @@ export default {
 }
 .nav-bar{
   color: white;
+}
+
+*.v-btn:not(.v-btn--round).v-size--default {
+    height: 48px;
+    min-width: 64px;
+    padding: 0 16px;
 }
 
 </style>
