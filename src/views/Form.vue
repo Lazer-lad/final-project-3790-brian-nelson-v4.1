@@ -79,7 +79,10 @@ export default {
 // DIRECTIVE STUFF
   directives: {
     customOn: {
-      bind (el,binding){
+      bind (el, binding){
+        el.onclick = function(){
+          binding.value();
+        }
 
       }
     }
