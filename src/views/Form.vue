@@ -67,6 +67,7 @@
 </template>
 
 <script>
+import Vuex from 'vuex'
 
 
 export default {
