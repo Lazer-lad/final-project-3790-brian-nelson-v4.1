@@ -61,7 +61,7 @@
       
       
     </div>
-    <HelloWorld/>
+    
     <router-view/>
   </div>
   </v-app>

@@ -67,7 +67,7 @@
 </template>
 
 <script>
-import Vuex from 'vuex'
+
 
 
 export default {
@@ -96,12 +96,12 @@ export default {
       alert('this is working')
     },
     onSubmit(){
-      const fromData = {
+      const formData = {
         name: this.name,
         email: this.email,
         password: this.password,
       }
-      console.log(formData)
+      
       this.$store.dispatch('userLoggedIn', {
         name: this.name,
         email: this.email,
