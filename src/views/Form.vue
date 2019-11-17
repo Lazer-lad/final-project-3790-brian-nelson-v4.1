@@ -13,7 +13,7 @@
     <v-card-title>Form</v-card-title>
     <v-container>
         
-    <v-form>
+    <v-form @submit.prevent="onSubmit">
     <v-text-field
       v-model="name"
       :error-messages="nameErrors"
@@ -72,6 +72,9 @@
 export default {
   data() {
     return {
+      name: '',
+      email: '',
+      password: '',
       
       
     };
@@ -90,6 +93,20 @@ export default {
   methods: {
     clicked() {
       alert('this is working')
+    },
+    onSubmit(){
+      const fromData = {
+        name: this.name,
+        email: this.email,
+        password: this.password,
+      }
+      console.log(formData)
+      this.$store.dispatch('userLoggedIn', {
+        name: this.name,
+        email: this.email,
+        password: this.password,
+      })
+
     }
   }
   
