@@ -1,3 +1,4 @@
+
 <template>
   <v-app>
   
@@ -43,13 +44,13 @@
       @blur="$v.checkbox.$touch()"
     ></v-checkbox>
 
-    <v-btn class="mr-4" @click="submit">submit</v-btn>
+    <v-btn class="mr-4" @click="onSubmit">submit</v-btn>
     <v-btn @click="clear">clear</v-btn>
   </v-form>
   
    </v-container>
   </v-card>
-  <v-btn v-customOn="clicked">is this working</v-btn>
+  <v-btn v-customOn="onSubmit">is this working</v-btn>
   </v-col>
   </v-row>
   
@@ -59,7 +60,7 @@
 </template>
 
 <script>
-
+/* eslint-disable no-console */
 
 
 export default {
@@ -87,20 +88,20 @@ export default {
     clicked() {
       alert('this is working')
     },
-    // onSubmit(){
-    //   const formData = {
-    //     name: this.name,
-    //     email: this.email,
-    //     password: this.password,
-    //   }
-      
-    //   this.$store.dispatch('userLoggedIn', {
-    //     name: this.name,
-    //     email: this.email,
-    //     password: this.password,
-    //   })
+    onSubmit() {
+       const formData = {
+         name: this.name,
+         email: this.email,
+         password: this.password,
+       }
+      console.log(formData),
+       this.$store.dispatch('userLoggedIn', {
+         name: this.name,
+         email: this.email,
+         password: this.password,
+       })
 
-    // }
+     }
   }
   
 };
