@@ -5,6 +5,11 @@
  
   <v-row>
       <v-col>
+        
+        
+        <div>{{ storeUser }}</div>
+         
+  
   <v-card
     
     class="mx-auto"
@@ -89,12 +94,12 @@ export default {
       alert('this is working')
     },
     onSubmit() {
-       const formData = {
-         name: this.name,
-         email: this.email,
-         password: this.password,
-       }
-      console.log(formData),
+      //  const formData = {
+      //    name: this.name,
+      //    email: this.email,
+      //    password: this.password,
+      //  }
+      // console.log(formData),
        this.$store.dispatch('userLoggedIn', {
          name: this.name,
          email: this.email,
