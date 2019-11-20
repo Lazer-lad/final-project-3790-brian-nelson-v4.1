@@ -44,7 +44,7 @@ export default {
   data() {
     return {
       showing: false,
-      myImage: require('C:/Users/ladof/Desktop/finalprojectv1/finalv4/public/falcon.png')
+      // myImage: require('C:/Users/ladof/Desktop/finalprojectv1/finalv4/public/falcon.png')
     };
   },
   mixins: [aboutMixin]
