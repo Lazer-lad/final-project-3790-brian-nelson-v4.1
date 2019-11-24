@@ -25,8 +25,8 @@
         </v-toolbar>
         <router-view />
 
-        
-        <v-navigation-drawer v-model="drawer" absolute bottom temporary>
+
+        <v-navigation-drawer v-model="drawer" absolute>
           <v-list nav dense>
             <v-list-item-group
               v-model="group"
