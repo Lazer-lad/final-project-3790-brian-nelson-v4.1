@@ -1,26 +1,16 @@
 <template>
   <div class="home">
-    <!-- <v-row
-      ><v-col
-        >
-
-          
-          <v-btn v-on:click="nextPage()">Next Page</v-btn
-        >
-          <div>this working {{ info }}</div>
-          </v-col
-      ></v-row
-    > -->
-
+    
     <!-- <v-row>
-      <v-col cols="3" v-for="name in info" :key="name">
+      <v-col cols="3" v-for="name in newInfo" :key="name">
         <v-card class="mx-auto" max-width="400" tile>
           <v-card-title>
-            {{ name.results }}
+            {{ name.name }}
           </v-card-title>
         </v-card>
       </v-col>
     </v-row> -->
+    
 
 <v-btn v-on:click="previousPage()">get the info from next page</v-btn>
 <v-btn v-on:click="nextPage()">get the next page</v-btn>
@@ -62,17 +52,17 @@ export default {
 
       //   .then(response => (this.info = response.data));
 
-        
+        this.getNext();
 
         
     
-    console.log(this.info.next)
+   
     
 
     },
 
     previousPage: function() {
-      console.log(this.newInfo)
+      
       // this.nextPage();
 
       // axios
@@ -89,16 +79,26 @@ export default {
     getNext: function(){
  
 
-        axios.get("https://swapi.co/api/people/")
+var testInfo = "https://swapi.co/api/people/";
+ 
+for (let i = 0; i< 9; i++){
+        axios.get(testInfo)
   .then((response ) => { this.info = response.data
     // do something with Google res
 
-     return axios.get(this.info.next);
+     
   })
-   .then((response) => {
-    this.newInfo = response.data
-   })
-        
+   if (this.newInfo != null){
+   testInfo = this.info.next;
+   console.log(testInfo)
+   }
+
+    // if (this.newInfo != null){
+    // this.storeSwapiArray.push(this.newInfo)
+    
+    // }
+}
+
     },
 
    
