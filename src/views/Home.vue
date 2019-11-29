@@ -79,19 +79,16 @@ export default {
     getNext: function(){
  
 
-var testInfo = "https://swapi.co/api/people/";
  
-for (let i = 0; i< 9; i++){
-        axios.get(testInfo)
+ 
+for (let i = 1; i< 10; i++){
+  console.log(i)
+        axios.get("https://swapi.co/api/people/?page="+i)
   .then((response ) => { this.info = response.data
     // do something with Google res
-
+this.storeSwapiArray.push(this.info.results)
      
   })
-   if (this.newInfo != null){
-   testInfo = this.info.next;
-   console.log(testInfo)
-   }
 
     // if (this.newInfo != null){
     // this.storeSwapiArray.push(this.newInfo)
@@ -99,6 +96,7 @@ for (let i = 0; i< 9; i++){
     // }
 }
 
+   console.log(this.storeSwapiArray)
     },
 
    
