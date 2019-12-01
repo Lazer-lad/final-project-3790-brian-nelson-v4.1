@@ -1,25 +1,27 @@
 <template>
   <div class="home">
-    
-    <!-- <v-row>
-      <v-col cols="3" v-for="name in newInfo" :key="name">
-        <v-card class="mx-auto" max-width="400" tile>
-          <v-card-title>
-            {{ name.name }}
-          </v-card-title>
+    <v-app>
+   <v-row>
+      <v-col cols="3" v-for="name in storeSwapiArray.flat().length" :key="name">
+        <v-card  class="mx-auto" max-width="400" tile>
+          <v-card-title >
+            {{ storeSwapiArray.flat()[name] }}
+        </v-card-title>
         </v-card>
       </v-col>
-    </v-row> -->
+   </v-row>
     
-
+<v-row>
 <v-btn v-on:click="previousPage()">get the info from next page</v-btn>
 <v-btn v-on:click="nextPage()">get the next page</v-btn>
+</v-row>
 <div>
-
+{{ storeSwapiArray.flat().name}}
     <!-- <v-pagination v-model="name" class="my-4" :length="i"></v-pagination> -->
 </div>
-    
+    </v-app>
   </div>
+  
 </template>
 
 <script>
@@ -36,6 +38,7 @@ export default {
       newInfo: null,
       i: 1,
       storeSwapiArray: [],
+      newArray: null,
 
       page1: "https://swapi.co/api/people/?page=1",
 
@@ -83,11 +86,11 @@ export default {
  
 for (let i = 1; i< 10; i++){
   console.log(i)
-        axios.get("https://swapi.co/api/people/?page="+i)
+        axios.get("https://swapi.co/api/people/?page="+i)//THIS IS NOT ADDING THINGS INTO THE ARRAY IN ORDER
   .then((response ) => { this.info = response.data
     // do something with Google res
 this.storeSwapiArray.push(this.info.results)
-     
+    
   })
 
     // if (this.newInfo != null){
@@ -95,6 +98,8 @@ this.storeSwapiArray.push(this.info.results)
     
     // }
 }
+
+ this.storeSwapiArray.flat()
 
    console.log(this.storeSwapiArray)
     },
