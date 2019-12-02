@@ -1,17 +1,35 @@
 <template>
   <div>
     <v-app>
-      <v-card v-if="this.$store.state.user.name" max-width="344" outlined>
-            <v-card-title>Welcome {{ this.$store.state.user.name }} <v-spacer></v-spacer><v-avatar color="indigo">
-      <v-icon dark>mdi-account-circle</v-icon>
-    </v-avatar></v-card-title>
-          </v-card>
+      <template v-slot:activator="{ on }">
+          
+        </template>
+      <v-menu transition="slide-x-transition">
+        
+        <v-list>
+          <v-list-item v-for="n in 5" :key="n" link>
+            <v-list-item-title v-text="'Item ' + n"></v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <v-card
+        v-if="this.$store.state.user.name"
+        max-width="344"
+        outlined
+        transition="slide-x-transition"
+      >
+      <v-btn color="primary" class="ma-2" v-on="on">
+            Slide X Transition
+          </v-btn>
+        <v-card-title>
+          Welcome {{ this.$store.state.user.name }}
+          <v-spacer></v-spacer>
+          <v-avatar color="indigo">
+            <v-icon dark>mdi-account-circle</v-icon>
+          </v-avatar>
+        </v-card-title>
+      </v-card>
       <v-row>
-
-        
-      
-        
-      
         <v-col>
           <v-card class="mx-auto" max-width="400" outlined>
             <v-card-title>Form</v-card-title>

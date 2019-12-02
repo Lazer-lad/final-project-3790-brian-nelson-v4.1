@@ -8,10 +8,10 @@
     </v-avatar></v-card-title>
           </v-card>
    <v-row>
-      <v-col cols="3" v-for="(name, key) in storeSwapiArray.flat().length" :key="name">
+      <v-col cols="3" v-for="(name) in storeSwapiArray.flat().length" :key="name">
         <v-card  class="mx-auto" max-width="400" tile>
           <v-card-title >
-             {{ storeSwapiArray[name][2] }} {{ key }}
+             {{ storeSwapiArray.flat()[name] }} 
             
         </v-card-title>
         </v-card>
