@@ -10,10 +10,10 @@
           <v-toolbar-title>Spaceships</v-toolbar-title>
           <v-spacer></v-spacer>
           
-          <v-toolbar-items dense color="black">
+          <v-toolbar-items dense color="black" class="mb-n4">
             <div>
               <router-link to="/"
-                ><v-btn text color="black">Home</v-btn></router-link
+                ><v-btn text color="black" >Home</v-btn></router-link
               >
             </div>
             <router-link to="/about"><v-btn text>About</v-btn></router-link>

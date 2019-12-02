@@ -2,7 +2,7 @@
 
 <template>
   <v-app>
-    <transition name="fade"><v-card v-if="this.$store.state.user.name" max-width="344" outlined>
+    <transition name="fade"><v-card v-if="this.$store.state.user.name" transition="fade-transition" max-width="344" outlined>
             <v-card-title>Welcome {{ this.$store.state.user.name }} <v-spacer></v-spacer><v-avatar color="indigo">
       <v-icon dark>mdi-account-circle</v-icon>
     </v-avatar></v-card-title>
@@ -58,12 +58,18 @@ export default {
 
 <style  scoped>
 .fade-enter{
-
+  
 }
 
-.fade-enter-active{
+.fade-enter-active {
 
-  
+
+}
+.fade-leave{
+
+}
+.fade-leave-active {
+
 }
 
 </style>
