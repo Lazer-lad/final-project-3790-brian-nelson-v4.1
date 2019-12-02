@@ -1,10 +1,18 @@
 <template>
   <div>
     <v-app>
+      <v-card v-if="this.$store.state.user.name" max-width="344" outlined>
+            <v-card-title>Welcome {{ this.$store.state.user.name }} <v-spacer></v-spacer><v-avatar color="indigo">
+      <v-icon dark>mdi-account-circle</v-icon>
+    </v-avatar></v-card-title>
+          </v-card>
       <v-row>
-        <v-col>
-          <div>{{ this.$store.state.user.name }}</div>
 
+        
+      
+        
+      
+        <v-col>
           <v-card class="mx-auto" max-width="400" outlined>
             <v-card-title>Form</v-card-title>
             <v-container>
@@ -28,6 +36,7 @@
             </v-container>
           </v-card>
           <v-btn @click="clicked">is this working</v-btn>
+          <div v-if="this.$store.state.user.name"></div>
         </v-col>
       </v-row>
     </v-app>
@@ -57,10 +66,8 @@ export default {
   },
   methods: {
     clicked() {
-
-       
       console.log(this.$store.state.user);
-      console.log()
+      console.log();
       alert("what is goign on");
     },
 

@@ -2,6 +2,11 @@
 
 <template>
   <v-app>
+    <v-card v-if="this.$store.state.user.name" max-width="344" outlined>
+            <v-card-title>Welcome {{ this.$store.state.user.name }} <v-spacer></v-spacer><v-avatar color="indigo">
+      <v-icon dark>mdi-account-circle</v-icon>
+    </v-avatar></v-card-title>
+          </v-card>
   <v-container>
     <v-row>
       <v-col cols="3" v-for="ship in starships" :key="ship.model">

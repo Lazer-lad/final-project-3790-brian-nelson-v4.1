@@ -10,6 +10,7 @@ export default new Vuex.Store({
     name: '',
     email: '',
     password: '',
+    
     },
   },
   getters: {

@@ -9,6 +9,7 @@
 
           <v-toolbar-title>Spaceships</v-toolbar-title>
           <v-spacer></v-spacer>
+          
           <v-toolbar-items dense color="black">
             <div>
               <router-link to="/"
@@ -24,7 +25,6 @@
           </v-btn>
         </v-toolbar>
         <router-view />
-
 
         <v-navigation-drawer v-model="drawer" absolute>
           <v-list nav dense>
@@ -53,8 +53,6 @@
           </v-list>
         </v-navigation-drawer>
       </div>
-
-      
     </div>
   </v-app>
 </template>
