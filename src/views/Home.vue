@@ -2,10 +2,11 @@
   <div class="home">
     <v-app>
    <v-row>
-      <v-col cols="3" v-for="name in storeSwapiArray.flat().length" :key="name">
+      <v-col cols="3" v-for="(name, key) in storeSwapiArray.flat().length" :key="name">
         <v-card  class="mx-auto" max-width="400" tile>
           <v-card-title >
-            {{ storeSwapiArray.flat()[name] }}
+             {{ storeSwapiArray[name][2] }} {{ key }}
+            
         </v-card-title>
         </v-card>
       </v-col>
@@ -65,7 +66,7 @@ export default {
     },
 
     previousPage: function() {
-      
+      console.log(this.storeSwapiArray.flat()[name])
       // this.nextPage();
 
       // axios
@@ -101,7 +102,7 @@ this.storeSwapiArray.push(this.info.results)
 
  this.storeSwapiArray.flat()
 
-   console.log(this.storeSwapiArray)
+   
     },
 
    
