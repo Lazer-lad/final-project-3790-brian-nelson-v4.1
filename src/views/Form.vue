@@ -1,26 +1,19 @@
 <template>
   <div>
     <v-app>
-      <template v-slot:activator="{ on }">
-          
-        </template>
-      <v-menu transition="slide-x-transition">
-        
-        <v-list>
-          <v-list-item v-for="n in 5" :key="n" link>
-            <v-list-item-title v-text="'Item ' + n"></v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
-      <v-card
+           
+
+
+      <transition name="fade"><v-card
         v-if="this.$store.state.user.name"
         max-width="344"
         outlined
-        transition="slide-x-transition"
+        
       >
-      <v-btn color="primary" class="ma-2" v-on="on">
-            Slide X Transition
-          </v-btn>
+
+
+ 
+      
         <v-card-title>
           Welcome {{ this.$store.state.user.name }}
           <v-spacer></v-spacer>
@@ -28,7 +21,7 @@
             <v-icon dark>mdi-account-circle</v-icon>
           </v-avatar>
         </v-card-title>
-      </v-card>
+      </v-card></transition>
       <v-row>
         <v-col>
           <v-card class="mx-auto" max-width="400" outlined>
@@ -58,7 +51,21 @@
         </v-col>
       </v-row>
     </v-app>
+  
+<v-card transition="slide-x-transition">
+      <template v-slot:activator="{ on }">
+        <v-btn color="primary" class="ma-2" v-on="on">
+          Slide X Transition
+        </v-btn>
+      </template>
+      <title>this card</title>
+    </v-card>
+
+  
+  
+  
   </div>
+  
 </template>
 
 <script>
@@ -69,7 +76,8 @@ export default {
     return {
       name: "",
       email: "",
-      password: ""
+      password: "",
+      show: true
     };
   },
   // DIRECTIVE STUFF
@@ -100,3 +108,25 @@ export default {
   computed: {}
 };
 </script>
+<style  scoped>
+.fade-enter{
+  opacity: 0 ;
+  
+}
+
+.fade-enter-active {
+transition: opacity 1s;
+
+
+}
+.fade-leave{
+  
+
+}
+.fade-leave-active {
+  transition: opacity 1s;
+  opacity: 0;
+
+}
+
+</style>
