@@ -8,10 +8,10 @@
     </v-avatar></v-card-title>
           </v-card>
    <v-row>
-      <v-col cols="3" v-for="(name) in storeSwapiArray.flat().length" :key="name">
+      <v-col cols="3" v-for="obj in storeSwapiArray" :key="obj.name">
         <v-card  class="mx-auto" max-width="400" tile>
           <v-card-title >
-             {{ storeSwapiArray.flat()[name] }} 
+             {{ storeSwapiArray }} 
             
         </v-card-title>
         </v-card>
@@ -96,8 +96,8 @@ for (let i = 1; i< 10; i++){
         axios.get("https://swapi.co/api/people/?page="+i)//THIS IS NOT ADDING THINGS INTO THE ARRAY IN ORDER
   .then((response ) => { this.info = response.data
     // do something with Google res
-this.storeSwapiArray.push(this.info.results)
-    
+
+    this.storeSwapiArray.push(this.info.results)
   })
 
     // if (this.newInfo != null){
@@ -106,7 +106,7 @@ this.storeSwapiArray.push(this.info.results)
     // }
 }
 
- this.storeSwapiArray.flat()
+ 
 
    
     },
