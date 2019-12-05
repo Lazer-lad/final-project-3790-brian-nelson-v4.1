@@ -16,8 +16,8 @@
                 ><v-btn text color="black" >Home</v-btn></router-link
               >
             </div>
-            <router-link to="/about"><v-btn text>About</v-btn></router-link>
-            <router-link to="/form"><v-btn text>Form</v-btn></router-link>
+            <router-link to="/about"><v-btn text>About</v-btn><v-icon>mdi-info</v-icon></router-link>
+            <v-btn v-on="on" text >Login<v-icon>mdi-login</v-icon></v-btn>
           </v-toolbar-items>
 
           <v-btn icon>
@@ -25,6 +25,39 @@
           </v-btn>
         </v-toolbar>
         <router-view />
+
+<v-dialog v-model="dialog" persistent max-width="600px">
+  <template v-slot:activator="{ on }">
+        <v-btn color="primary" dark >Open Dialog</v-btn>
+      </template>
+      <v-card class="mx-auto" max-width="400" outlined>
+            <v-card-title>Form</v-card-title>
+            <v-container>
+              <v-form @submit.prevent="onSubmit">
+                <v-text-field
+                  v-model="name"
+                  :counter="10"
+                  label="Name"
+                  required
+                ></v-text-field>
+
+                <v-text-field
+                  v-model="email"
+                  label="E-mail"
+                  required
+                ></v-text-field>
+
+                
+                <v-card-actions>
+          <v-spacer></v-spacer>
+          <v-btn color="blue darken-1" text @click="dialog = false">Close</v-btn>
+          <v-btn color="blue darken-1" @click="onSubmit">Submit</v-btn>
+        </v-card-actions>
+                <!-- <v-btn @click="clear">clear</v-btn> -->
+              </v-form>
+            </v-container>
+          </v-card>
+</v-dialog>
 
         <v-navigation-drawer v-model="drawer" absolute>
           <v-list nav dense>
@@ -69,7 +102,8 @@ export default {
 
   data: () => ({
     drawer: false,
-    group: null
+    group: null,
+     dialog: false,
   }),
   watch: {
     group() {

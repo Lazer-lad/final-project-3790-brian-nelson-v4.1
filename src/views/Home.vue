@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <v-app>
-      
+     
       <v-card v-if="this.$store.state.user.name" max-width="344" outlined>
             <v-card-title>Welcome {{ this.$store.state.user.name }} <v-spacer></v-spacer><v-avatar color="indigo">
       <v-icon dark>mdi-account-circle</v-icon>
@@ -23,7 +23,9 @@
 <v-btn v-on:click="nextPage()">get the next page</v-btn>
 </v-row>
 <div>
-{{ storeSwapiArray.flat().name}}
+
+
+       
     <!-- <v-pagination v-model="name" class="my-4" :length="i"></v-pagination> -->
 </div>
     </v-app>
@@ -46,11 +48,8 @@ export default {
       i: 1,
       storeSwapiArray: [],
       newArray: null,
+       
 
-      page1: "https://swapi.co/api/people/?page=1",
-
-      page3: "https://swapi.co/api/people/?page=2",
-      page4: "https://swapi.co/api/people/?page=2"
     };
   },
   methods: {

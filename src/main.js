@@ -27,7 +27,8 @@ new Vue({
 
   data () {
     return {
-      info: null
+      info: null,
+      
     }
   },
   mounted () {
