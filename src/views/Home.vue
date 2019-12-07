@@ -96,7 +96,7 @@ for (let i = 1; i< 10; i++){
   .then((response ) => { this.info = response.data
     // do something with Google res
 
-    this.storeSwapiArray.push(this.info.results)
+    this.storeSwapiArray.push(this.info.results.obj)
   })
 
 

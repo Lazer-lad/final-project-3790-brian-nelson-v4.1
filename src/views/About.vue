@@ -16,7 +16,7 @@
   <v-container>
     <v-row>
       <v-col cols="3" v-for="ship in starships" :key="ship.model">
-        <transition name="fade"><v-card>
+        <v-card>
           <v-img
             class="white--text align-end"
             height="200px"
@@ -41,7 +41,7 @@
               <v-icon dark>mdi-minus</v-icon>
             </v-btn>
           </v-card-action>
-        </v-card></transition>
+        </v-card>
       </v-col>
     </v-row>
   </v-container>
