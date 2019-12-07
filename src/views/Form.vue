@@ -108,7 +108,7 @@ export default {
   computed: {}
 };
 </script>
-<style  scoped>
+<style>
 .fade-enter{
   opacity: 0 ;
   

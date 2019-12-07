@@ -99,6 +99,9 @@ for (let i = 1; i< 10; i++){
     this.storeSwapiArray.push(this.info.results)
   })
 
+
+
+
     // if (this.newInfo != null){
     // this.storeSwapiArray.push(this.newInfo)
     

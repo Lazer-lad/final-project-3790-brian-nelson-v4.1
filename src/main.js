@@ -18,6 +18,13 @@ Vue.config.productionTip = false
 
 //});
 
+Vue.directive('highlight', {
+  bind(el) {
+    el.style.color = 'skyblue';
+  }
+
+});
+
 
 new Vue({
   router,
