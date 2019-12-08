@@ -17,7 +17,7 @@
               >
             </div>
             <router-link to="/about"><v-btn text>About</v-btn><v-icon>mdi-info</v-icon></router-link>
-            <v-btn v-on="on" text >Login<v-icon>mdi-login</v-icon></v-btn>
+            <router-link to="/form"><v-btn v-on="on" text >Login<v-icon>mdi-login</v-icon></v-btn></router-link>
           </v-toolbar-items>
 
           <v-btn icon>
@@ -26,65 +26,71 @@
         </v-toolbar>
         <router-view />
 
-<v-dialog v-model="dialog" persistent max-width="600px">
-  <template v-slot:activator="{ on }">
-        <v-btn color="primary" dark >Open Dialog</v-btn>
-      </template>
-      <v-card class="mx-auto" max-width="400" outlined>
-            <v-card-title>Form</v-card-title>
-            <v-container>
-              <v-form @submit.prevent="onSubmit">
-                <v-text-field
-                  v-model="name"
-                  :counter="10"
-                  label="Name"
-                  required
-                ></v-text-field>
+        <!-- NAV DRAWER -->
 
-                <v-text-field
-                  v-model="email"
-                  label="E-mail"
-                  required
-                ></v-text-field>
+<v-navigation-drawer
+        v-model="drawer"
+        absolute
+        temporary
+      >
+        <v-list-item>
+          <v-list-item-avatar>
+            <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+          </v-list-item-avatar>
+  
+          <v-list-item-content>
+            <v-list-item-title>{{ this.$store.state.user.name }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+  
+        <v-divider></v-divider>
+  
+        <v-list dense>
+  
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon></v-icon>
+            </v-list-item-icon>
+  
+            <v-list-item-content>
+              <v-list-item-title><router-link to="/"
+                ><v-btn text color="black" >Home</v-btn></router-link
+              ></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
 
-                
-                <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn color="blue darken-1" text @click="dialog = false">Close</v-btn>
-          <v-btn color="blue darken-1" @click="onSubmit">Submit</v-btn>
-        </v-card-actions>
-                <!-- <v-btn @click="clear">clear</v-btn> -->
-              </v-form>
-            </v-container>
-          </v-card>
-</v-dialog>
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon></v-icon>
+            </v-list-item-icon>
+  
+            <v-list-item-content>
+              <v-list-item-title>
+                <router-link to="/about"><v-btn text>About</v-btn><v-icon>mdi-info</v-icon></router-link>
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
 
-        <v-navigation-drawer v-model="drawer" absolute>
-          <v-list nav dense>
-            <v-list-item-group
-              v-model="group"
-              active-class="deep-purple--text text--accent-4"
-            >
-              <v-list-item>
-                <router-link to="/about"
-                  ><v-list-item-title>About</v-list-item-title></router-link
-                >
-              </v-list-item>
 
-              <v-list-item>
-                <v-list-item-title>Bar</v-list-item-title>
-              </v-list-item>
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon></v-icon>
+            </v-list-item-icon>
+  
+            <v-list-item-content>
+              <v-list-item-title>
+                <router-link to="/form"><v-btn v-on="on" text >Login<v-icon>mdi-login</v-icon></v-btn></router-link>
+              </v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
 
-              <v-list-item>
-                <v-list-item-title>Fizz</v-list-item-title>
-              </v-list-item>
 
-              <v-list-item>
-                <v-list-item-title>Buzz</v-list-item-title>
-              </v-list-item>
-            </v-list-item-group>
-          </v-list>
-        </v-navigation-drawer>
+
+        </v-list>
+      </v-navigation-drawer>
+
+
+        
       </div>
     </div>
   </v-app>

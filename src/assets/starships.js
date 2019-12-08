@@ -1,6 +1,6 @@
 export const starships = [
     {
-        "image": "",
+        "image": "/exec.jpg",
         "name": "Executor",
         "model": "Executor-class star dreadnought",
         "manufacturer": "Kuat Drive Yards, Fondor Shipyards",
@@ -24,6 +24,7 @@ export const starships = [
         "url": "https://swapi.co/api/starships/15/"
     },
     {
+         "image": "/sentenial.jpg",
         "name": "Sentinel-class landing craft",
         "model": "Sentinel-class landing craft",
         "manufacturer": "Sienar Fleet Systems, Cyngus Spaceworks",
@@ -46,6 +47,7 @@ export const starships = [
         "url": "https://swapi.co/api/starships/5/"
     },
     {
+        "image": "/deathstar.png",
         "name": "Death Star",
         "model": "DS-1 Orbital Battle Station",
         "manufacturer": "Imperial Department of Military Research, Sienar Fleet Systems",
@@ -68,6 +70,7 @@ export const starships = [
         "url": "https://swapi.co/api/starships/9/"
     },
     {
+        "image": "/falcon.jpg",
         "name": "Millennium Falcon",
         "model": "YT-1300 light freighter",
         "manufacturer": "Corellian Engineering Corporation",
@@ -98,6 +101,7 @@ export const starships = [
         "url": "https://swapi.co/api/starships/10/"
     },
     {
+        "image": "/ywing.jpg",
         "name": "Y-wing",
         "model": "BTL Y-wing",
         "manufacturer": "Koensayr Manufacturing",

@@ -62,12 +62,6 @@ export default {
       //   .then(response => (this.info = response.data));
 
         this.getNext();
-
-        
-    
-   
-    
-
     },
 
     previousPage: function() {
@@ -98,9 +92,6 @@ for (let i = 1; i< 10; i++){
 
     this.storeSwapiArray.push(this.info.results.obj)
   })
-
-
-
 
     // if (this.newInfo != null){
     // this.storeSwapiArray.push(this.newInfo)

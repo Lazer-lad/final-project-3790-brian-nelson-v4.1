@@ -17,12 +17,10 @@
     <v-row>
       <v-col cols="3" v-for="ship in starships" :key="ship.model">
         <v-card>
-          <v-img
-            class="white--text align-end"
-            height="200px"
-            :src="myImage"
-          >
-            <v-card-title >{{ ship.name }}</v-card-title>
+         <v-img
+         height="200px"
+         :src="ship.image"
+         >
           </v-img>
 
           <v-card-title>
@@ -34,13 +32,13 @@
           </v-card-subtitle>
           <v-card-text>{{ ship.manufacturer }}</v-card-text>
 
-          <v-card-action>
+         <v-card-actions>
             <v-btn class="mx-2" fab dark medium color="light blue"
                
-                @click="showing = false">
+                @click="addFave()">
               <v-icon dark>mdi-minus</v-icon>
             </v-btn>
-          </v-card-action>
+         </v-card-actions>
         </v-card>
       </v-col>
     </v-row>
@@ -49,15 +47,30 @@
 </template>
 
 <script>
+/* eslint-disable no-console */
 import { aboutMixin } from "./aboutmixintest";
 
 export default {
   data() {
     return {
-      showing: false,
+      showing: true,
+      favArray: [],
+      team: [
+        {avatar:'/falcon.png'},
+        {avatar:'/falcon.png'},
+        {avatar:'/falcon.png'},
+        {avatar:'/falcon.png'}
+      ]
       // myImage: require('C:/Users/ladof/Desktop/finalprojectv1/finalv4/public/falcon.png')
     };
   },
+methods: {
+ addFave: function(){
+   alert('this working')
+ }
+},
+
+
   mixins: [aboutMixin]
 };
 </script>
