@@ -55,12 +55,7 @@ export default {
     return {
       showing: true,
       favArray: [],
-      team: [
-        {avatar:'/falcon.png'},
-        {avatar:'/falcon.png'},
-        {avatar:'/falcon.png'},
-        {avatar:'/falcon.png'}
-      ]
+      
       // myImage: require('C:/Users/ladof/Desktop/finalprojectv1/finalv4/public/falcon.png')
     };
   },

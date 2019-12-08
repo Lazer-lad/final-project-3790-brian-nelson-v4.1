@@ -6,6 +6,7 @@ import vuetify from './plugins/vuetify'
 import axios from 'axios'
 
 import Vuex from 'vuex'
+import Header from './components/Header.vue'
 
 Vue.config.productionTip = false
 
@@ -25,6 +26,8 @@ Vue.directive('highlight', {
 
 });
 
+
+Vue.component('app-header', Header);
 
 new Vue({
   router,
