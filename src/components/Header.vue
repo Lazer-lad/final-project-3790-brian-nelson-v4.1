@@ -90,12 +90,12 @@
 
         </v-list>
       </v-navigation-drawer>
-
+</div>
 <v-dialog v-model="dialog" persistent max-width="600px">
       
       
       <v-card class="mx-auto"  outlined>
-            <v-card-title>Form</v-card-title>
+            <v-card-title>Login</v-card-title>
             <v-container>
               <v-form @submit.prevent="onSubmit">
                 <v-text-field
@@ -126,7 +126,32 @@
       </v-card>
     </v-dialog>
         
-      </div>
+      <v-footer
+    color="primary"
+    padless
+  >
+    <v-row
+      justify="center"
+      no-gutters
+    >
+      <v-card-text>
+        <v-btn
+          v-for="icon in icons"
+          :key="icon"
+          class="mx-4 white--text"
+          icon
+        >
+          <v-icon size="24px">{{ icon }}</v-icon>
+        </v-btn>
+      </v-card-text>
+      <v-col
+        class="primary lighten-1 py-4 text-center white--text"
+        cols="12"
+      >
+        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+      </v-col>
+    </v-row>
+  </v-footer>
     </div>
   </v-app>
 </template>
