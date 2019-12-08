@@ -7,7 +7,7 @@ import axios from 'axios'
 
 import Vuex from 'vuex'
 import Header from './components/Header.vue'
-
+import Footer from './components/Footer.vue'
 Vue.config.productionTip = false
 
 //vuetify.directive('highlight', {
@@ -28,6 +28,7 @@ Vue.directive('highlight', {
 
 
 Vue.component('app-header', Header);
+Vue.component('app-footer', Footer);
 
 new Vue({
   router,
