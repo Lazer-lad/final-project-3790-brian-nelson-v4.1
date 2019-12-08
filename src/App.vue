@@ -18,7 +18,7 @@
             </div>
             <router-link to="/about"><v-btn text>About</v-btn><v-icon>mdi-info</v-icon></router-link>
             <router-link to="/form"><v-btn v-on="on" text >Login<v-icon>mdi-login</v-icon></v-btn></router-link>
-            <v-btn color="primary" dark v-on="on">Open Dialog</v-btn>
+            <v-btn text @click.stop="dialog = true">Open Dialog</v-btn>
           </v-toolbar-items>
 
           <v-btn icon>
@@ -93,53 +93,33 @@
 
 <v-dialog v-model="dialog" persistent max-width="600px">
       
-      <v-card>
-        <v-card-title>
-          <span class="headline">User Profile</span>
-        </v-card-title>
-        <v-card-text>
-          <v-container>
-            <v-row>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field label="Legal first name*" required></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6" md="4">
-                <v-text-field label="Legal middle name" hint="example of helper text only on focus"></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6" md="4">
+      
+      <v-card class="mx-auto"  outlined>
+            <v-card-title>Form</v-card-title>
+            <v-container>
+              <v-form @submit.prevent="onSubmit">
                 <v-text-field
-                  label="Legal last name*"
-                  hint="example of persistent helper text"
-                  persistent-hint
+                  v-model="name"
+                  :counter="10"
+                  label="Name"
                   required
                 ></v-text-field>
-              </v-col>
-              <v-col cols="12">
-                <v-text-field label="Email*" required></v-text-field>
-              </v-col>
-              <v-col cols="12">
-                <v-text-field label="Password*" type="password" required></v-text-field>
-              </v-col>
-              <v-col cols="12" sm="6">
-                <v-select
-                  :items="['0-17', '18-29', '30-54', '54+']"
-                  label="Age*"
+
+                <v-text-field
+                  v-model="email"
+                  label="E-mail"
                   required
-                ></v-select>
-              </v-col>
-              <v-col cols="12" sm="6">
-                <v-autocomplete
-                  :items="['Skiing', 'Ice hockey', 'Soccer', 'Basketball', 'Hockey', 'Reading', 'Writing', 'Coding', 'Basejump']"
-                  label="Interests"
-                  multiple
-                ></v-autocomplete>
-              </v-col>
-            </v-row>
-          </v-container>
-          <small>*indicates required field</small>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
+                ></v-text-field>
+
+                <v-btn class="mr-4" @click="onSubmit">submit</v-btn>
+                <!-- <v-btn @click="clear">clear</v-btn> -->
+              </v-form>
+            </v-container>
+          
+      
+      
+      
+      <v-card-actions>
           <v-btn color="blue darken-1" text @click="dialog = false">Close</v-btn>
           <v-btn color="blue darken-1" text @click="dialog = false">Save</v-btn>
         </v-card-actions>
@@ -165,7 +145,22 @@ export default {
     drawer: false,
     group: null,
      dialog: false,
+      name: "",
+      email: "",
+      password: "",
   }),
+  methods: {
+
+onSubmit() {
+      return this.$store.dispatch("userLoggedIn", {
+        name: this.name,
+        email: this.email,
+        password: this.password
+      });
+    }
+  },
+
+
   watch: {
     group() {
       this.drawer = false;
