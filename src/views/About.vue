@@ -61,7 +61,7 @@ export default {
   },
 methods: {
  addFave: function(){
-   alert('this working')
+   console.log(this.starships)
  }
 },
 

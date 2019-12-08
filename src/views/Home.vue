@@ -55,28 +55,14 @@ export default {
   methods: {
     nextPage: function() {
      
-      // axios
-
-      //   .get("https://swapi.co/api/people/")
-
-      //   .then(response => (this.info = response.data));
+    
 
         this.getNext();
     },
 
     previousPage: function() {
       console.log(this.storeSwapiArray.flat()[name])
-      // this.nextPage();
-
-      // axios
-
-      //   .get(this.info.next)
-
-      //   .then(response => (this.newInfo = response.data));
-
-        //console.log(this.newInfo.results)
-    // this.storeSwapiArray.push(this.newInfo.next)
-// console.log(this.storeSwapiArray)
+    
     },
 
     getNext: function(){

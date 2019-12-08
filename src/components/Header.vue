@@ -10,7 +10,7 @@
           <v-toolbar-title>Spaceships</v-toolbar-title>
           <v-spacer></v-spacer>
           
-          <v-toolbar-items dense color="black" class="mb-n4">
+          <v-toolbar-items dense color="black" >
             <div>
               <router-link to="/"
                 ><v-btn text color="black" >Home</v-btn></router-link
