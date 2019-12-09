@@ -1,13 +1,15 @@
 # Brian Nelons Final 3790
 
-## Project Requirement
-```
+## Project Requirements
+
 
 ### Effectively use conditional logic and JavaScript array methods to render large lists.
-```
+
+
+
 ### Encapsulate your code as VueJS single-file components.
 
-```
+
 
 
 ## Project setup
