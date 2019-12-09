@@ -24,9 +24,7 @@
           <v-btn text @click="editAge">Open Dialog</v-btn>
         </v-toolbar-items>
 
-        <v-btn icon>
-          <v-icon>mdi-magnify</v-icon>
-        </v-btn>
+        
       </v-toolbar>
       <router-view />
 
