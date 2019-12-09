@@ -68,21 +68,18 @@ export default {
     getNext: function(){
  
 
- 
+ //AXIOS HANDLED HERE
  
 for (let i = 1; i< 10; i++){
   console.log(i)
         axios.get("https://swapi.co/api/people/?page="+i)//THIS IS NOT ADDING THINGS INTO THE ARRAY IN ORDER
   .then((response ) => { this.info = response.data
-    // do something with Google res
+    
 
     this.storeSwapiArray.push(this.info.results.obj)
   })
 
-    // if (this.newInfo != null){
-    // this.storeSwapiArray.push(this.newInfo)
-    
-    // }
+   
 }
 
  

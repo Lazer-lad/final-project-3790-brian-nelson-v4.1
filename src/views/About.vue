@@ -2,6 +2,7 @@
 
 <template>
   <v-app>
+    <!-- VUEX -->
     <v-card v-if="this.$store.state.user.name"  max-width="344" outlined>
             <v-card-title v-highlight>Welcome {{ this.$store.state.user.name }} <v-spacer></v-spacer><v-avatar color="indigo">
       <v-icon dark>mdi-account-circle</v-icon>
