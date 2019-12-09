@@ -8,8 +8,16 @@ import axios from 'axios'
 import Vuex from 'vuex'
 import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
-Vue.config.productionTip = false
+import Loginpop from './components/Loginpop.vue'
+Vue.config.productionTip = false;
 
+export const eventBus = new Vue({
+  methods: {
+    changeAge(age) {
+        this.$emit('ageWasEdited', age);
+    }
+  }
+});
 //vuetify.directive('highlight', {
 //bind(el, binding, vnode ){
 //el stands for element
@@ -29,6 +37,10 @@ Vue.directive('highlight', {
 
 Vue.component('app-header', Header);
 Vue.component('app-footer', Footer);
+Vue.component('login-pop', Loginpop);
+
+
+
 
 new Vue({
   router,

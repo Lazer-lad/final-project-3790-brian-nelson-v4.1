@@ -3,8 +3,8 @@
     <div id="app">
       <div id="nav">
         <v-toolbar dense color="dark blue">
-          <v-app-bar-nav-icon
-            @click.stop="drawer = !drawer"
+          <v-app-bar-nav-icon  @click.stop="drawer = !drawer"
+            
           ></v-app-bar-nav-icon>
 
           <v-toolbar-title>Spaceships</v-toolbar-title>
@@ -18,7 +18,7 @@
             </div>
             <router-link to="/about"><v-btn text>About</v-btn><v-icon>mdi-info</v-icon></router-link>
             <router-link to="/form"><v-btn v-on="on" text >Login<v-icon>mdi-login</v-icon></v-btn></router-link>
-            <v-btn text @click.stop="dialog = true">Open Dialog</v-btn>
+            <v-btn text @click="editAge">Open Dialog</v-btn>
           </v-toolbar-items>
 
           <v-btn icon>
@@ -91,47 +91,18 @@
         </v-list>
       </v-navigation-drawer>
 </div>
-<v-dialog v-model="dialog" persistent max-width="600px">
-      
-      
-      <v-card class="mx-auto"  outlined>
-            <v-card-title>Login</v-card-title>
-            <v-container>
-              <v-form @submit.prevent="onSubmit">
-                <v-text-field
-                  v-model="name"
-                  :counter="10"
-                  label="Name"
-                  required
-                ></v-text-field>
 
-                <v-text-field
-                  v-model="email"
-                  label="E-mail"
-                  required
-                ></v-text-field>
 
-                
-                <!-- <v-btn @click="clear">clear</v-btn> -->
-              </v-form>
-            </v-container>
-          
-      
-      
-      
-      <v-card-actions>
-          <v-btn color="black" text @click="dialog = false">Close</v-btn>
-          <v-btn color="blue darken-1" text @click="onSubmit"  >submit</v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
-        
+
+       <div>{{ userAge }}</div> 
       
     </div>
   
 </template>
 
 <script>
+/* eslint-disable no-console */
+import { eventBus } from '../main';
 //import HelloWorld from './components/HelloWorld';
 
 export default {
@@ -142,27 +113,22 @@ export default {
   },
 
   data: () => ({
+    dialog: true,
     drawer: false,
     group: null,
-     dialog: false,
-      name: "",
-      email: "",
-      password: "",
+    test: 'this'
+     
   }),
   methods: {
-
-onSubmit() {
-this.dialog = false
-
-      return this.$store.dispatch("userLoggedIn", {
-        name: this.name,
-        email: this.email,
-        password: this.password,
-      });
+    editAge(){
       
-    }
-  },
+this.userAge = 30;
 
+      eventBus.changeAge('ageWasEdited', this.userAge);
+    }
+
+
+  },
 
   watch: {
     group() {
