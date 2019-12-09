@@ -126,6 +126,7 @@ export const starships = [
         "url": "https://swapi.co/api/starships/11/"
     },
     {
+        "image": "/xwing.jpg",
         "name": "X-wing",
         "model": "T-65 X-wing",
         "manufacturer": "Incom Corporation",
@@ -155,6 +156,7 @@ export const starships = [
         "url": "https://swapi.co/api/starships/12/"
     },
     {
+        "image": "/tiead.jpg",
         "name": "TIE Advanced x1",
         "model": "Twin Ion Engine Advanced x1",
         "manufacturer": "Sienar Fleet Systems",
@@ -179,6 +181,7 @@ export const starships = [
         "url": "https://swapi.co/api/starships/13/"
     },
     {
+        "image": "/slave1.png",
         "name": "Slave 1",
         "model": "Firespray-31-class patrol and attack",
         "manufacturer": "Kuat Systems Engineering",
@@ -204,6 +207,7 @@ export const starships = [
         "url": "https://swapi.co/api/starships/21/"
     },
     {
+        "image": "/impshuttle.jpg",
         "name": "Imperial shuttle",
         "model": "Lambda-class T-4a shuttle",
         "manufacturer": "Sienar Fleet Systems",
@@ -231,6 +235,7 @@ export const starships = [
         "url": "https://swapi.co/api/starships/22/"
     },
     {
+        "image": "/ef76.png",
         "name": "EF76 Nebulon-B escort frigate",
         "model": "EF76 Nebulon-B escort frigate",
         "manufacturer": "Kuat Drive Yards",
@@ -254,6 +259,7 @@ export const starships = [
         "url": "https://swapi.co/api/starships/23/"
     },
     {
+        "image": "/calamari.jpg",
         "name": "Calamari Cruiser",
         "model": "MC80 Liberty type Star Cruiser",
         "manufacturer": "Mon Calamari shipyards",

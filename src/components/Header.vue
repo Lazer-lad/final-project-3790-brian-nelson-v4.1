@@ -1,63 +1,64 @@
 <template>
-  
-    <div id="app">
-      <div id="nav">
-        <v-toolbar dense color="dark blue">
-          <v-app-bar-nav-icon  @click.stop="drawer = !drawer"
-            
-          ></v-app-bar-nav-icon>
+  <div id="app">
+    <div id="nav">
+      <v-toolbar dense color="dark blue">
+        <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
-          <v-toolbar-title>Spaceships</v-toolbar-title>
-          <v-spacer></v-spacer>
-          
-          <v-toolbar-items dense color="black" >
-            <div>
-              <router-link to="/"
-                ><v-btn text color="black" >Home</v-btn></router-link
-              >
-            </div>
-            <router-link to="/about"><v-btn text>About</v-btn><v-icon>mdi-info</v-icon></router-link>
-            <router-link to="/form"><v-btn v-on="on" text >Login<v-icon>mdi-login</v-icon></v-btn></router-link>
-            <v-btn text @click="editAge">Open Dialog</v-btn>
-          </v-toolbar-items>
+        <v-toolbar-title>SWAPI API</v-toolbar-title>
+        <v-spacer></v-spacer>
 
-          <v-btn icon>
-            <v-icon>mdi-magnify</v-icon>
-          </v-btn>
-        </v-toolbar>
-        <router-view />
+        <v-toolbar-items dense color="black">
+          <div>
+            <router-link to="/"
+              ><v-btn text color="black">Home</v-btn></router-link
+            >
+          </div>
+          <router-link to="/about"
+            ><v-btn text>About</v-btn><v-icon>mdi-info</v-icon></router-link
+          >
+          <router-link to="/form"
+            ><v-btn v-on="on" text
+              >Login<v-icon>mdi-login</v-icon></v-btn
+            ></router-link
+          >
+          <v-btn text @click="editAge">Open Dialog</v-btn>
+        </v-toolbar-items>
 
-        <!-- NAV DRAWER -->
+        <v-btn icon>
+          <v-icon>mdi-magnify</v-icon>
+        </v-btn>
+      </v-toolbar>
+      <router-view />
 
-<v-navigation-drawer
-        v-model="drawer"
-        absolute
-        temporary
-      >
+      <!-- NAV DRAWER -->
+
+      <v-navigation-drawer v-model="drawer" absolute temporary>
         <v-list-item v-if="this.$store.state.user.name">
-          
           <v-list-item-avatar>
-            <v-img src="https://randomuser.me/api/portraits/men/78.jpg" ></v-img>
+            <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
           </v-list-item-avatar>
-  
+
           <v-list-item-content>
-            <v-list-item-title>{{ this.$store.state.user.name }}</v-list-item-title>
+            <v-list-item-title>{{
+              this.$store.state.user.name
+            }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-  
+
         <v-divider></v-divider>
-  
+
         <v-list dense>
-  
           <v-list-item>
             <v-list-item-icon>
               <v-icon></v-icon>
             </v-list-item-icon>
-  
+
             <v-list-item-content>
-              <v-list-item-title><router-link to="/"
-                ><v-btn text color="black" >Home</v-btn></router-link
-              ></v-list-item-title>
+              <v-list-item-title
+                ><router-link to="/"
+                  ><v-btn text color="black">Home</v-btn></router-link
+                ></v-list-item-title
+              >
             </v-list-item-content>
           </v-list-item>
 
@@ -65,44 +66,43 @@
             <v-list-item-icon>
               <v-icon></v-icon>
             </v-list-item-icon>
-  
+
             <v-list-item-content>
               <v-list-item-title>
-                <router-link to="/about"><v-btn text>About</v-btn><v-icon>mdi-info</v-icon></router-link>
+                <router-link to="/about"
+                  ><v-btn text>About</v-btn
+                  ><v-icon>mdi-info</v-icon></router-link
+                >
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
 
-
           <v-list-item>
             <v-list-item-icon>
               <v-icon></v-icon>
             </v-list-item-icon>
-  
+
             <v-list-item-content>
               <v-list-item-title>
-                <router-link to="/form"><v-btn v-on="on" text >Login<v-icon>mdi-login</v-icon></v-btn></router-link>
+                <router-link to="/form"
+                  ><v-btn v-on="on" text
+                    >Login<v-icon>mdi-login</v-icon></v-btn
+                  ></router-link
+                >
               </v-list-item-title>
             </v-list-item-content>
           </v-list-item>
-
-
-
         </v-list>
       </v-navigation-drawer>
-</div>
-
-
-
-       <div>{{ userAge }}</div> 
-      
     </div>
-  
+
+    <div>{{ userAge }}</div>
+  </div>
 </template>
 
 <script>
 /* eslint-disable no-console */
-import { eventBus } from '../main';
+import { eventBus } from "../main";
 //import HelloWorld from './components/HelloWorld';
 
 export default {
@@ -116,18 +116,14 @@ export default {
     dialog: true,
     drawer: false,
     group: null,
-    test: 'this'
-     
+    test: "this"
   }),
   methods: {
-    editAge(){
-      
-this.userAge = 30;
+    editAge() {
+      this.userAge = 30;
 
-      eventBus.changeAge('ageWasEdited', this.userAge);
+      eventBus.changeAge("ageWasEdited", this.userAge);
     }
-
-
   },
 
   watch: {
