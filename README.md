@@ -4,7 +4,7 @@
 
 
 ### 1. Effectively use conditional logic and JavaScript array methods to render large lists.
-Two list working right now [Custom foo description](#foo)
+Two list working right now [Custom foo description](#test)
 
 
 ### 2. Encapsulate your code as VueJS single-file components.
