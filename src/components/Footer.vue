@@ -3,6 +3,7 @@
     <v-footer
     color="primary"
     padless
+    absolute
   >
     <v-row
       justify="center"

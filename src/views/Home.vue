@@ -4,18 +4,16 @@
      
    
    
-   <v-parallax src="https://media.vanityfair.com/photos/5ce426151c0b0773cacd1121/16:9/w_2560%2Cc_limit/star-wars-feature-vf-2019-summer-embed-05.jpg"><v-card v-if="this.$store.state.user.name" max-width="344" outlined>
-            <v-card-title>Welcome {{ this.$store.state.user.name }} <v-spacer></v-spacer><v-avatar color="indigo">
-      <v-icon dark>mdi-account-circle</v-icon>
-    </v-avatar></v-card-title>
-          </v-card><v-row
+   <v-parallax src="https://media.vanityfair.com/photos/5ce426151c0b0773cacd1121/16:9/w_2560%2Cc_limit/star-wars-feature-vf-2019-summer-embed-05.jpg"><v-row
       align="center"
       justify="center"
     >
        
       <v-col class="text-center" cols="12">
-        <h1 class="display-1 font-weight-thin mb-4">Vuetify.js</h1>
-        <h4 class="subheading">Build your application today!</h4>
+        <h1 class="display-1 font-weight-thin mb-4">Star Wars Characters</h1>
+        <div v-if="this.$store.state.user.name"><h4 class="subheading">Welcome {{ this.$store.state.user.name }}</h4><v-avatar>
+            <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+          </v-avatar></div>
       </v-col>
     </v-row></v-parallax>
    <v-row>

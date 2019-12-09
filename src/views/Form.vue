@@ -38,8 +38,7 @@
               </v-form>
             </v-container>
           </v-card>
-          <v-btn @click="clicked">is this working</v-btn>
-          <div v-if="this.$store.state.user.name"></div>
+          
         </v-col>
       </v-row>
     </v-app>
@@ -93,7 +92,7 @@ export default {
 
     onSubmit() {
       if (this.$refs.form.validate()) {
-        this.$router.push("about");
+        this.$router.push("welcome");
         return this.$store.dispatch("userLoggedIn", {
           name: this.name,
           email: this.email,

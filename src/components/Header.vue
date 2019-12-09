@@ -10,7 +10,7 @@
         <v-toolbar-items dense color="black">
           <div>
             <router-link to="/"
-              ><v-btn text color="black">Home</v-btn></router-link
+              ><v-btn text>Home</v-btn></router-link
             >
           </div>
           <router-link to="/about"
@@ -56,7 +56,7 @@
             <v-list-item-content>
               <v-list-item-title
                 ><router-link to="/"
-                  ><v-btn text color="black">Home</v-btn></router-link
+                  ><v-btn text>Home</v-btn></router-link
                 ></v-list-item-title
               >
             </v-list-item-content>

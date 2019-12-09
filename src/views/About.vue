@@ -1,16 +1,19 @@
 <template>
   <v-app>
-    <!-- VUEX -->
-    <v-card v-if="this.$store.state.user.name" max-width="344" outlined>
-      <v-card-title v-highlight
-        >Welcome {{ this.$store.state.user.name }} <v-spacer></v-spacer
-        ><v-avatar color="indigo">
-          <v-icon dark>mdi-account-circle</v-icon>
-        </v-avatar></v-card-title
-      >
-    </v-card>
+   
 
-    <v-parallax src="https://wallpapercave.com/wp/wp400097.jpg"></v-parallax>
+    <v-parallax src="https://wallpapercave.com/wp/wp400097.jpg"><v-row
+      align="center"
+      justify="center"
+    >
+       
+      <v-col class="text-center" cols="12">
+        <h1 class="display-1 font-weight-thin mb-4">Star Wars Ships</h1>
+        <div v-if="this.$store.state.user.name"><h4 class="subheading">Welcome {{ this.$store.state.user.name }}</h4><v-avatar>
+            <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+          </v-avatar></div>
+      </v-col>
+    </v-row></v-parallax>
 
     <v-container>
       <v-row>
@@ -36,7 +39,7 @@
                 color="light blue"
                 @click="addFave()"
               >
-                <v-icon dark>mdi-minus</v-icon>
+                <v-icon dark>mdi-plus</v-icon>
               </v-btn>
             </v-card-actions>
           </v-card>
