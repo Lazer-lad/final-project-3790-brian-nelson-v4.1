@@ -4,7 +4,7 @@
 
 
 ### 1. Effectively use conditional logic and JavaScript array methods to render large lists.
-Two list working right now
+Two list working right now [Custom foo description](#foo)
 
 
 ### 2. Encapsulate your code as VueJS single-file components.
@@ -17,6 +17,7 @@ Vue cli used
 [Git used for version control maybe not enough commits.](https://github.com/Lazer-lad)
 
 ### 5. Allow communication between components using props, custom events, or local store.
+Event bus is broken, cant get it to pass anything
 
 ### 6. Present a form for user input that provides useful form validation and feedback.
 
@@ -27,10 +28,15 @@ Vue cli used
 ### 9. Connect to a server using HTTP and display retrieved data (use vue-resource or Axios).
 
 ### 10. Provide at least 3 different routes with navigation between them using vue-router.
+Routing is in the navigation, coding [here](src\router\index.js)
 
-### 11. Manage your application's state using vuex.
+### 11. Manage your application's state using vuex. 
+Used with the login, can be seen [here](https://kind-panini-383726.netlify.com/form). Coding can mostly be seen [here](src\store\index.js)
 
 ### 12. Structure, document, and deploy your final project code according to common industry practices.
+
+Deployed to [netlify](https://kind-panini-383726.netlify.com)
+
 
 ## Project setup
 ```
