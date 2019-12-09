@@ -10,7 +10,7 @@
           </v-card>
 
 
-
+<v-parallax src="https://wallpapercave.com/wp/wp400097.jpg"></v-parallax>
 
 
 

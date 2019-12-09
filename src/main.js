@@ -18,15 +18,8 @@ export const eventBus = new Vue({
     }
   }
 });
-//vuetify.directive('highlight', {
-//bind(el, binding, vnode ){
-//el stands for element
-//el.style.backgroundColor = 'green';
 
-//}
-
-//});
-
+//DIRECTIVE STUFF
 Vue.directive('highlight', {
   bind(el) {
     el.style.color = 'skyblue';

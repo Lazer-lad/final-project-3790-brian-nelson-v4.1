@@ -27,11 +27,13 @@
           <v-card class="mx-auto" max-width="400" outlined>
             <v-card-title>Form</v-card-title>
             <v-container>
-              <v-form @submit.prevent="onSubmit">
+              <v-form @submit.prevent="onSubmit" ref="form">
                 <v-text-field
                   v-model="name"
                   :counter="10"
+                  :rules="inputRules"
                   label="Name"
+                  pattern="^[a-zA-Z0-9_.-]*$"
                   required
                 ></v-text-field>
 
@@ -77,7 +79,14 @@ export default {
       name: "",
       email: "",
       password: "",
-      show: true
+      show: true,
+      inputRules:[
+        v => !!v || 'Name is required',
+        v => (v && v.length <= 10) || 'Name must be less than 10 characters',
+        v => (v && /[a-zA-z0-9-]+$/.test(v)) || `Only lowercase letters, numbers or hyphens allowed`,
+      
+      ]
+      
     };
   },
   // DIRECTIVE STUFF
@@ -98,11 +107,14 @@ export default {
     },
 
     onSubmit() {
+      if(this.$refs.form.validate()){
+
       return this.$store.dispatch("userLoggedIn", {
         name: this.name,
         email: this.email,
         password: this.password
       });
+      }
     }
   },
   computed: {}

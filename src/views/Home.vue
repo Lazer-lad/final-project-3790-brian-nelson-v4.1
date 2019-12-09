@@ -2,11 +2,22 @@
   <div class="home">
     <v-app>
      
-      <v-card v-if="this.$store.state.user.name" max-width="344" outlined>
+   
+   
+   <v-parallax src="https://media.vanityfair.com/photos/5ce426151c0b0773cacd1121/16:9/w_2560%2Cc_limit/star-wars-feature-vf-2019-summer-embed-05.jpg"><v-card v-if="this.$store.state.user.name" max-width="344" outlined>
             <v-card-title>Welcome {{ this.$store.state.user.name }} <v-spacer></v-spacer><v-avatar color="indigo">
       <v-icon dark>mdi-account-circle</v-icon>
     </v-avatar></v-card-title>
-          </v-card>
+          </v-card><v-row
+      align="center"
+      justify="center"
+    >
+       
+      <v-col class="text-center" cols="12">
+        <h1 class="display-1 font-weight-thin mb-4">Vuetify.js</h1>
+        <h4 class="subheading">Build your application today!</h4>
+      </v-col>
+    </v-row></v-parallax>
    <v-row>
       <v-col cols="3" v-for="obj in storeSwapiArray" :key="obj.name">
         <v-card  class="mx-auto" max-width="400" tile>
@@ -18,10 +29,7 @@
       </v-col>
    </v-row>
     
-<v-row>
-<v-btn v-on:click="previousPage()">get the info from next page</v-btn>
-<v-btn v-on:click="nextPage()">get the next page</v-btn>
-</v-row>
+
 <div>
 
 
