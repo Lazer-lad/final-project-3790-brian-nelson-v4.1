@@ -16,8 +16,19 @@
     </v-row></v-parallax>
 
     <v-container>
+      <v-text-field
+              v-model="filterShips"
+              clearable
+              flat
+              solo-inverted
+              hide-details
+              
+              label="Search"
+            ></v-text-field>
+
+
       <v-row>
-        <v-col cols="3" v-for="ship in starships" :key="ship.model">
+        <v-col cols="3" v-for="ship in favArray" :key="ship">
           <v-card>
             <v-img height="200px" :src="ship.image"> </v-img>
 
@@ -45,6 +56,15 @@
           </v-card>
         </v-col>
       </v-row>
+       <v-btn
+                class="mx-2"
+                fab
+                dark
+                medium
+                color="light blue"
+                @click="addFave()"
+              ></v-btn>
+      {{ filterShips }}
     </v-container>
   </v-app>
 </template>
@@ -57,16 +77,45 @@ export default {
   data() {
     return {
       showing: true,
-      favArray: []
+      favArray: [],
+      filterShips: " "
 
       // myImage: require('C:/Users/ladof/Desktop/finalprojectv1/finalv4/public/falcon.png')
     };
   },
   methods: {
+
+ 
+   
     addFave: function() {
-      console.log(this.starships);
+      for (let ship of this.starships){
+
+this.favArray.push(ship)
+console.log(this.favArray);
+    
+
+    }
+   
+  },
+  },
+
+  computed: {
+       
+   
+
+
+    filterStarhips(){
+      return this.favArray.filter((element) => {
+        
+        return element.match(this.filterShips);
+       
+
+      });
+   
+      
     }
   },
+
 
   mixins: [aboutMixin]
 };

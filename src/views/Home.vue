@@ -16,17 +16,18 @@
           </v-avatar></div>
       </v-col>
     </v-row></v-parallax>
+    <v-container>
    <v-row>
       <v-col cols="3" v-for="obj in storeSwapiArray" :key="obj.name">
         <v-card  class="mx-auto" max-width="400" tile>
           <v-card-title >
-             {{ storeSwapiArray }} 
+             {{obj.name }} 
             
         </v-card-title>
         </v-card>
       </v-col>
    </v-row>
-    
+    </v-container>
 
 <div>
 
@@ -82,7 +83,9 @@ for (let i = 1; i< 10; i++){
   .then((response ) => { this.info = response.data
     
 
-    this.storeSwapiArray.push(this.info.results.obj)
+    for (let item of response.data.results){
+      this.storeSwapiArray.push(item)
+    }
   })
 
    
