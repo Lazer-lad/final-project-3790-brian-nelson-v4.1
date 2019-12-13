@@ -1,38 +1,33 @@
-import Vue from 'vue'
-import Vuex from 'vuex'
+import Vue from "vue";
+import Vuex from "vuex";
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
     user: {
-    
-    name: '',
-    email: '',
-    
-    
-    },
+      name: "",
+      email: ""
+    }
   },
   getters: {
-    user(state){
-      return state.user
+    user(state) {
+      return state.user;
     },
-    userName(state){
-      return state.user.name
-    },
-
-
+    userName(state) {
+      return state.user.name;
+    }
   },
-  mutations: {// changes the info I think
-    storeUser(state, user){
-      return(state.user = user)
+  mutations: {
+    // changes the info I think
+    storeUser(state, user) {
+      return (state.user = user);
     }
   },
   actions: {
-    userLoggedIn({ commit }, user){
-      commit('storeUser', user)// I don't really get this
-    },
+    userLoggedIn({ commit }, user) {
+      commit("storeUser", user); // I don't really get this
+    }
   },
-  modules: {
-  }
-})
+  modules: {}
+});

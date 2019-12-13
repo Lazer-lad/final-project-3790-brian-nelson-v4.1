@@ -9,9 +9,7 @@
 
         <v-toolbar-items dense color="black">
           <div>
-            <router-link to="/"
-              ><v-btn text>Home</v-btn></router-link
-            >
+            <router-link to="/"><v-btn text>Home</v-btn></router-link>
           </div>
           <router-link to="/about"
             ><v-btn text>About</v-btn><v-icon>mdi-info</v-icon></router-link
@@ -23,8 +21,6 @@
           >
           <v-btn text @click="editAge">Open Dialog</v-btn>
         </v-toolbar-items>
-
-        
       </v-toolbar>
       <router-view />
 
@@ -93,8 +89,6 @@
         </v-list>
       </v-navigation-drawer>
     </div>
-
-    
   </div>
 </template>
 
@@ -118,8 +112,6 @@ export default {
   }),
   methods: {
     editAge() {
-      
-
       eventBus.$emit("dialogWasEdited", this.test);
     }
   },

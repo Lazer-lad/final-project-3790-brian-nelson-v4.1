@@ -1,9 +1,9 @@
-import { starships } from '../assets/starships'
+import { starships } from "../assets/starships";
 
 export const aboutMixin = {
-    data() {
+  data() {
     return {
-        starships,
-    }
-},
-}
+      starships
+    };
+  }
+};

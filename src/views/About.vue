@@ -1,31 +1,31 @@
 <template>
   <v-app>
-   
-
-    <v-parallax src="https://wallpapercave.com/wp/wp400097.jpg"><v-row
-      align="center"
-      justify="center"
-    >
-       
-      <v-col class="text-center" cols="12">
-        <h1 class="display-1 font-weight-thin mb-4">Star Wars Ships</h1>
-        <div v-if="this.$store.state.user.name"><h4 class="subheading">Welcome {{ this.$store.state.user.name }}</h4><v-avatar>
-            <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
-          </v-avatar></div>
-      </v-col>
-    </v-row></v-parallax>
+    <v-parallax src="https://wallpapercave.com/wp/wp400097.jpg"
+      ><v-row align="center" justify="center">
+        <v-col class="text-center" cols="12">
+          <h1 class="display-1 font-weight-thin mb-4">Star Wars Ships</h1>
+          <div v-if="this.$store.state.user.name">
+            <h4 class="subheading">
+              Welcome {{ this.$store.state.user.name }}
+            </h4>
+            <v-avatar>
+              <v-img
+                src="https://randomuser.me/api/portraits/men/78.jpg"
+              ></v-img>
+            </v-avatar>
+          </div>
+        </v-col> </v-row
+    ></v-parallax>
 
     <v-container>
       <v-text-field
-              v-model="filterShips"
-              clearable
-              flat
-              solo-inverted
-              hide-details
-              
-              label="Search"
-            ></v-text-field>
-
+        v-model="filterShips"
+        clearable
+        flat
+        solo-inverted
+        hide-details
+        label="Search"
+      ></v-text-field>
 
       <v-row>
         <v-col cols="3" v-for="ship in starships" :key="ship.name">
@@ -56,14 +56,14 @@
           </v-card>
         </v-col>
       </v-row>
-       <v-btn
-                class="mx-2"
-                fab
-                dark
-                medium
-                color="light blue"
-                @click="addFave()"
-              ></v-btn>
+      <v-btn
+        class="mx-2"
+        fab
+        dark
+        medium
+        color="light blue"
+        @click="addFave()"
+      ></v-btn>
       {{ filterShips }}
     </v-container>
   </v-app>
@@ -84,38 +84,21 @@ export default {
     };
   },
   methods: {
-
- 
-   
     addFave: function() {
-      for (let ship of this.starships){
-
-this.favArray.push(ship)
-console.log(this.favArray);
-    
-
+      for (let ship of this.starships) {
+        this.favArray.push(ship);
+        console.log(this.favArray);
+      }
     }
-   
-  },
   },
 
   computed: {
-       
-   
-
-
-    filterStarhips(){
-      return this.favArray.filter((element) => {
-        
+    filterStarhips() {
+      return this.favArray.filter(element => {
         return element.match(this.filterShips);
-       
-
       });
-   
-      
     }
   },
-
 
   mixins: [aboutMixin]
 };
