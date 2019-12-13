@@ -94,7 +94,7 @@
       </v-navigation-drawer>
     </div>
 
-    <div>{{ userAge }}</div>
+    
   </div>
 </template>
 
@@ -118,9 +118,9 @@ export default {
   }),
   methods: {
     editAge() {
-      this.userAge = 30;
+      
 
-      eventBus.changeAge("ageWasEdited", this.userAge);
+      eventBus.$emit("dialogWasEdited", this.test);
     }
   },
 

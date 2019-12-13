@@ -52,7 +52,7 @@ import { eventBus } from '../main';
   data: () => ({
     userAge:'',
     test:'',
-     dialogs: false ,
+     
       name: "",
       email: "",
       password: "",
@@ -70,8 +70,8 @@ this.dialog = false
       
     },
     created() {
-        eventBus.$on('ageWasEdited', (age) => {
-this.userAge = age;
+        eventBus.$on('dialogWasEdited', (age) => {
+this.dialogs = age;
 
         });
     }

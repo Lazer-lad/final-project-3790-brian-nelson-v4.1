@@ -28,7 +28,7 @@
 
 
       <v-row>
-        <v-col cols="3" v-for="ship in favArray" :key="ship">
+        <v-col cols="3" v-for="ship in starships" :key="ship.name">
           <v-card>
             <v-img height="200px" :src="ship.image"> </v-img>
 

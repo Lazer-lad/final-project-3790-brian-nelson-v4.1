@@ -11,13 +11,7 @@ import Footer from './components/Footer.vue'
 import Loginpop from './components/Loginpop.vue'
 Vue.config.productionTip = false;
 
-export const eventBus = new Vue({
-  methods: {
-    changeAge(age) {
-        this.$emit('ageWasEdited', age);
-    }
-  }
-});
+export const eventBus = new Vue();
 
 //DIRECTIVE STUFF
 Vue.directive('highlight', {
