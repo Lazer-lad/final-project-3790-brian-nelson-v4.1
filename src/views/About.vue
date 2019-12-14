@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-parallax src="https://wallpapercave.com/wp/wp400097.jpg"
+    <transition name="fade" appear><v-parallax src="https://wallpapercave.com/wp/wp400097.jpg"
       ><v-row align="center" justify="center">
         <v-col class="text-center" cols="12">
           <h1 class="display-1 font-weight-thin mb-4">Star Wars Ships</h1>
@@ -15,7 +15,7 @@
             </v-avatar>
           </div>
         </v-col> </v-row
-    ></v-parallax>
+    ></v-parallax></transition>
 
     <v-container>
       <v-text-field
@@ -29,7 +29,7 @@
 
       <v-row>
         <v-col cols="3" v-for="ship in starships" :key="ship.name">
-          <v-card>
+          <transition name="fade" appear><v-card>
             <v-img height="200px" :src="ship.image"> </v-img>
 
             <v-card-title>
@@ -53,7 +53,7 @@
                 <v-icon dark>mdi-plus</v-icon>
               </v-btn>
             </v-card-actions>
-          </v-card>
+          </v-card></transition>
         </v-col>
       </v-row>
       <v-btn
@@ -78,6 +78,7 @@ export default {
     return {
       showing: true,
       favArray: [],
+      
       filterShips: " "
 
       // myImage: require('C:/Users/ladof/Desktop/finalprojectv1/finalv4/public/falcon.png')
@@ -85,10 +86,7 @@ export default {
   },
   methods: {
     addFave: function() {
-      for (let ship of this.starships) {
-        this.favArray.push(ship);
-        console.log(this.favArray);
-      }
+      
     }
   },
 
@@ -103,3 +101,18 @@ export default {
   mixins: [aboutMixin]
 };
 </script>
+<style>
+.fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  transition: opacity 4s;
+}
+.fade-leave {
+}
+.fade-leave-active {
+  transition: opacity 1s;
+  opacity: 0;
+}
+</style>
