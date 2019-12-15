@@ -1,7 +1,11 @@
 <template>
   <div id="app">
     <div id="nav">
-      <v-toolbar dense color="dark blue">
+      <v-app-bar
+      dense
+      
+       
+      color="dark blue">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
 
         <v-toolbar-title>SWAPI API</v-toolbar-title>
@@ -21,7 +25,7 @@
           >
           <v-btn text @click="editAge">Open Dialog</v-btn>
         </v-toolbar-items>
-      </v-toolbar>
+      </v-app-bar>
       <router-view />
 
       <!-- NAV DRAWER -->

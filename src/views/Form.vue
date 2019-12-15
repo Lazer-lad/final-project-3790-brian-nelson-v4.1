@@ -29,6 +29,7 @@
 
                   <v-text-field
                     v-model="email"
+                    autocomplete="email"
                     label="E-mail"
                     required
                     :rules="emailInputRules"

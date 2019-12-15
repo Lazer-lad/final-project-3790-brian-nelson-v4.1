@@ -17,7 +17,57 @@
         </v-col> </v-row
     ></v-parallax></transition>
 
+<v-menu offset-y>
+        <template v-slot:activator="{ on }">
+<v-btn
+                v-on="on"
+                fab
+                dark
+                medium
+                right
+                bottom
+                fixed
+                color="light blue"><v-icon dark>mdi-star</v-icon></v-btn>
+    
+    
+         
+        </template>
+        <v-list>
+          <v-subheader>FAVORITES</v-subheader>
+          <v-list-item
+          v-for="(ship, u) in favArray"
+          :key="ship.name" 
+            
+          >
+          <v-list-item-avatar>
+            <v-img :src="ship.image"></v-img>
+          </v-list-item-avatar>
+            <v-list-item-title>{{ship.name}}</v-list-item-title>
+          <v-btn icon @click="minusFave(u)">  <v-icon dark>mdi-close-circle</v-icon></v-btn> 
+          </v-list-item>
+          
+        
+        
+        </v-list>
+      </v-menu>
+    <v-snackbar
+        v-model="snackbar"
+        :timeout= 2000
+      >
+        {{ test }}
+        <v-btn
+          color="blue"
+          text
+          @click="snackbar = false"
+        >
+          Close
+        </v-btn>
+      </v-snackbar>
+
     <v-container>
+
+        
+      
       <v-text-field
         v-model="filterShips"
         clearable
@@ -28,44 +78,40 @@
       ></v-text-field>
 
       <v-row>
-        <v-col cols="3" v-for="ship in starships" :key="ship.name">
+        <v-col cols="3" v-for="(ship, i) in starships" :key="ship.name">
           <transition name="fade" appear><v-card>
             <v-img height="200px" :src="ship.image"> </v-img>
 
             <v-card-title>
-              <p class="text-no-wrap" v-highlight>{{ ship.name }}</p>
+              <p class="text-no-wrap" v-highlight>{{ ship.name }} {{i}}</p>
             </v-card-title>
 
             <v-card-subtitle>
               <div>{{ ship.model }}</div>
+              {{ starships.name }}
             </v-card-subtitle>
             <v-card-text>{{ ship.manufacturer }}</v-card-text>
 
-            <v-card-actions>
+            
               <v-btn
                 class="mx-2"
                 fab
                 dark
                 medium
                 color="light blue"
-                @click="addFave()"
+                @click="addFave(i)"
               >
                 <v-icon dark>mdi-plus</v-icon>
               </v-btn>
-            </v-card-actions>
+            
           </v-card></transition>
         </v-col>
       </v-row>
-      <v-btn
-        class="mx-2"
-        fab
-        dark
-        medium
-        color="light blue"
-        @click="addFave()"
-      ></v-btn>
-      {{ filterShips }}
+      
+      
+   
     </v-container>
+    
   </v-app>
 </template>
 
@@ -76,8 +122,10 @@ import { aboutMixin } from "./aboutmixintest";
 export default {
   data() {
     return {
+      snackbar: false,
       showing: true,
       favArray: [],
+      test:'',
       
       filterShips: " "
 
@@ -85,9 +133,33 @@ export default {
     };
   },
   methods: {
-    addFave: function() {
+    addFave: function(x) {
+      
+      console.log(this.starships)
+      console.log(this.favArray.length)
+      if (this.favArray.length < 6){
+      this.favArray.push(this.starships[x])
+      this.test = "added " + this.starships[x].name + " to favorites"
+      this.snackbar = true
+      console.log(this.favArray)
+      }else{
+        this.test = "Favorites is full"
+        this.snackbar = true
+      }
+    },
+
+minusFave: function(z) {
+      
+      console.log(this.starships)
+      console.log(this.favArray.length)
+      this.favArray.splice(z, 1)
+      
+      console.log(this.favArray)
       
     }
+
+
+
   },
 
   computed: {
