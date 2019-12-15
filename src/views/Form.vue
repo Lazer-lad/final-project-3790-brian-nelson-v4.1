@@ -14,31 +14,32 @@
       >
       <v-row>
         <v-col>
-          <v-card class="mx-auto" max-width="400" outlined>
-            <v-card-title>Form</v-card-title>
-            <v-container>
-              <v-form @submit.prevent="onSubmit" ref="form">
-                <v-text-field
-                  v-model="name"
-                  :counter="15"
-                  :rules="userInputRules"
-                  label="Username"
-                 
-                  required
-                ></v-text-field>
+          <transition name="slide" appear>
+            <v-card class="mx-auto" max-width="400" outlined>
+              <v-card-title>Form</v-card-title>
+              <v-container>
+                <v-form @submit.prevent="onSubmit" ref="form">
+                  <v-text-field
+                    v-model="name"
+                    :counter="15"
+                    :rules="userInputRules"
+                    label="Username"
+                    required
+                  ></v-text-field>
 
-                <v-text-field
-                  v-model="email"
-                  label="E-mail"
-                  required
-                  :rules="emailInputRules"
-                ></v-text-field>
+                  <v-text-field
+                    v-model="email"
+                    label="E-mail"
+                    required
+                    :rules="emailInputRules"
+                  ></v-text-field>
 
-                <v-btn class="mr-4" @click="onSubmit">submit</v-btn>
-                <!-- <v-btn @click="clear">clear</v-btn> -->
-              </v-form>
-            </v-container>
-          </v-card>
+                  <v-btn class="mr-4" @click="onSubmit">submit</v-btn>
+                  <!-- <v-btn @click="clear">clear</v-btn> -->
+                </v-form>
+              </v-container>
+            </v-card></transition
+          >
         </v-col>
       </v-row>
     </v-app>
@@ -65,10 +66,11 @@ export default {
       password: "",
       show: true,
 
-emailInputRules:[
-v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
-
-],
+      emailInputRules: [
+        v =>
+          /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) ||
+          "E-mail must be valid"
+      ],
 
       userInputRules: [
         v => !!v || "Name is required",
@@ -123,5 +125,32 @@ v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be va
 .fade-leave-active {
   transition: opacity 1s;
   opacity: 0;
+}
+.slide-enter {
+}
+.slide-enter-active {
+  animation: slide-in 1s ease-out forwards;
+}
+.slide-leave {
+}
+
+.slide-leave-active {
+  animation: slide-out 1s ease-out forwards;
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-400px);
+  }
+  to {
+    tranform: translateY(0);
+  }
+}
+@keyframes slide-out {
+  from {
+    tranform: translateY(0);
+  }
+  to {
+    transform: translateY(20px);
+  }
 }
 </style>
