@@ -20,10 +20,10 @@
               <v-form @submit.prevent="onSubmit" ref="form">
                 <v-text-field
                   v-model="name"
-                  :counter="10"
-                  :rules="inputRules"
+                  :counter="15"
+                  :rules="userInputRules"
                   label="Username"
-                  pattern="^[a-zA-Z0-9_.-]*$"
+                 
                   required
                 ></v-text-field>
 
@@ -31,6 +31,7 @@
                   v-model="email"
                   label="E-mail"
                   required
+                  :rules="emailInputRules"
                 ></v-text-field>
 
                 <v-btn class="mr-4" @click="onSubmit">submit</v-btn>
@@ -63,9 +64,15 @@ export default {
       email: "",
       password: "",
       show: true,
-      inputRules: [
+
+emailInputRules:[
+v => /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(v) || 'E-mail must be valid'
+
+],
+
+      userInputRules: [
         v => !!v || "Name is required",
-        v => (v && v.length <= 10) || "Name must be less than 10 characters",
+        v => (v && v.length <= 15) || "Name must be less than 15 characters",
         v =>
           (v && /[a-zA-z0-9-]+$/.test(v)) ||
           `Only lowercase letters, numbers or hyphens allowed`
